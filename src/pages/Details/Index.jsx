@@ -1,16 +1,21 @@
 import { Container } from "./styles.js";
 
-import { Button } from "../../components/Button"
+import { Button } from "../../components/Button";
+
+import { Header } from "../../components/Header";
 
 export function Details() {
 
   return (
     <Container>
-      <h1>hello world </h1>
 
-       <Button title='test'/>
-       <Button title='clique aqui'/>
-    </Container>   
+      <Header/>
+      
+
+     <Button title='Voltar'/>
+
+    </Container>
+       
 
   )
 }
