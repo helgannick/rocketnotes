@@ -1,5 +1,6 @@
 import { Container, Links } from "./styles.js";
 import { Button } from "../../components/Button";
+import { ButtonText } from "../../components/ButtonText";
 import { Header } from "../../components/Header";
 import { Section } from "../../components/Section";
 import { Tags } from "../../components/Tags";
@@ -10,6 +11,8 @@ export function Details() {
     <Container>
 
       <Header/>
+
+      <ButtonText title='Excluir nota'/>
 
       <Section title='Links úteis'>
         <Links>
