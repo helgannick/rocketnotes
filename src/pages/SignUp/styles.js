@@ -9,6 +9,12 @@ export const Container = styled.div`
 
 `;
 
+export const Background = styled.div`
+  flex: 1;
+  background: url(${backgroundImg}) no-repeat center center;
+  background-size: cover;
+`;
+
 export const Form = styled.form`
   padding: 0 136px;
 
@@ -41,9 +47,5 @@ export const Form = styled.form`
   }
 `;
 
-export const Background = styled.div`
-  flex: 1;
-  background: url(${backgroundImg}) no-repeat center center;
-  background-size: cover;
-`;
+
 
