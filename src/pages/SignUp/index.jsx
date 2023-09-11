@@ -7,6 +7,9 @@ import { Input } from "../../components/Input";
 export function SignUp() {
   return (
     <Container>
+
+      <Background/>
+
       <Form>
         <h1>Rocket Notes</h1>
         <p>Aplicação para salvar e gerenciar seus links úteis.</p>
@@ -42,7 +45,7 @@ export function SignUp() {
 
       </Form>
 
-      <Background/>
+     
     </Container>
   );
 }
