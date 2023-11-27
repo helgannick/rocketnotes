@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FiPlus, FiSearch } from "react-icons/fi";
 import { Brand, Container, Content, Menu, NewNote, Search } from "./styles.js";
 
@@ -17,6 +18,8 @@ export function Home() {
   const [tagsSelected, setTagsSelected] = useState([]);
   const [notes, setNotes] = useState([]);
 
+  const navigate = useNavigate()
+
   function handleTagSelected(tagName) {
     if(tagName === "all"){
       return setTagsSelected([]);
@@ -33,6 +36,10 @@ export function Home() {
 
     }
 
+  }
+
+  function handleDetails(id){ 
+    navigate(`/details/${id}`);
   }
 
   useEffect(() => {
@@ -84,7 +91,7 @@ export function Home() {
       <Search>
         <Input 
         placeholder="Pesquisar pelo título " 
-        onChange={() => setSearch(e.target.value)}
+        onChange={(e) => setSearch(e.target.value)}
         icon={FiSearch} 
         
         />
@@ -97,6 +104,7 @@ export function Home() {
               <Note
               key={String(note.id)}
               data={note}
+              onClick={() => handleDetails(note.id)}
               />
             ))
           }
