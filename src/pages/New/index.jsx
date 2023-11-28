@@ -9,8 +9,7 @@ import { NoteItem } from "../../components/NoteItem";
 import { Section } from "../../components/Section";
 import { Textarea } from "../../components/Textarea";
 
-import { Link } from "react-router-dom";
-
+import { ButtonText } from "../../components/ButtonText";
 import { api } from "../../services/api";
 
 export function New() {
@@ -43,10 +42,13 @@ export function New() {
     setTags((prevState) => prevState.filter((tag) => tag !== deleted));
   }
 
-  async function handleNewNote() {
+  function handleBack() {
+    navigate(-1);
+  }
 
-    if(!title){
-      return alert("Digite o titulo da Nota")
+  async function handleNewNote() {
+    if (!title) {
+      return alert("Digite o titulo da Nota");
     }
 
     if (newTag) {
@@ -65,7 +67,7 @@ export function New() {
     });
 
     alert("Nota criada com sucesso!");
-    navigate("/");
+    navigate(-1);
   }
 
   return (
@@ -76,7 +78,8 @@ export function New() {
         <Form>
           <header>
             <h1>Criar nota</h1>
-            <Link to="/">voltar</Link>
+
+            <ButtonText title="Voltar" onClick={handleBack} />
           </header>
 
           <Input
